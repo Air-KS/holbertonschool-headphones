@@ -1,0 +1,38 @@
+/* Styles */
+
+@font-face {
+  font-family: face;
+  src: url(Polices/SourceSansPro-Regular.otf);
+}
+
+body {
+
+}
+
+/* Style spécifique pour ordinateurs */
+@media screen and (min-width: 1400px) {
+
+}
+
+/* Style spécifique pour tablettes */
+@media screen and (min-width: 768px) and (min-width: 1399px) {
+
+}
+
+/* Style spécifique pour mobiles */
+@media screen and (max-width: 480px) {
+
+}
+
+a:hover, a:active {
+  color: #FF6565
+}
+
+button:hover, button:active {
+  opacity: 0.9;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
