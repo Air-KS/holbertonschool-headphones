@@ -1,38 +1,209 @@
-/* Styles */
+/* Style 0 - Header */
+/* Nomenclature: Kebab Case (kebab-case) */
 
+/* Fonts
+============================= */
 @font-face {
-  font-family: face;
-  src: url(Polices/SourceSansPro-Regular.otf);
+  font-family: 'sans-pro';
+  src:  url('./Polices/SourceSansPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Variables
+============================= */
+:root {
+  --font-family-primary: sans-pro;
+  --primary-color: white;
+  --secondary-color: #071629;
+  --button-primary-color: #ff6565;
+}
+
+/* Global Styles
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-
+  overflow-x: hidden;
+  width: 100vw;
+  font-family: var(--font-family-primary);
 }
 
-/* Style spécifique pour ordinateurs */
-@media screen and (min-width: 1400px) {
-
+/* Header
+============================= */
+.header {
+  display: flex;
+  justify-content: center;
+}
+.header-navbar {
+  background: transparent;
+  position: absolute;
+  z-index: 3;
+}
+.header-navbar-input {
+  display: none;
+}
+.header-navbar-input:checked + .hamburger-menu .linea-up-rotate-right {
+  position: relative;
+  top: 6.5px;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.header-navbar-input:checked + .hamburger-menu .linea-hidden {
+  background: transparent;
+}
+.header-navbar-input:checked + .hamburger-menu .linea-down-rotate-left {
+  position: relative;
+  top: -6.5px;
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+}
+.header-navbar-input:checked ~ .options-links .list-item {
+  padding-top: 40px;
+  transition: all 0.3s ease;
+}
+.header-navbar-input:checked ~ .options-links .list-item-link {
+  color: white;
+  text-decoration: none;
+}
+.header-navbar-label {
+  display: inline-block;
+  position: relative;
+  top: 34px;
+  left: 29px;
+}
+.header-navbar-label .hamburger-menu-linea {
+  margin: 4px 4px;
+  display: block;
+  background: var(--primary-color);
+  user-select: none;
+  width: 15px;
+  height: 2.5px;
+  transition: transform 0.2s ease;
+}
+.header-navbar-label .linea-up-rotate-left, .header-navbar-label .linea-down-rotate-right {
+  width: 20px;
+}
+.header-navbar-options {
+  text-align: center;
+  list-style: none;
+}
+.header-navbar-options li {
+  padding-top: 7px;
+  line-height: 1px;
+}
+.header-navbar-options li a {
+  color: transparent;
+}
+.header-navbar-logo {
+  display: block;
+  width: 100vw;
+  text-align: center;
+}
+.header-navbar-logo-imagen {
+  max-width: 161px;
 }
 
-/* Style spécifique pour tablettes */
-@media screen and (min-width: 768px) and (min-width: 1399px) {
-
+/* Hero Section
+============================= */
+.hero {
+  width: 100%;
+  text-align: center;
+}
+.hero-body {
+  max-height: 900px;
+  padding: 0;
+}
+.hero-body-image {
+  display: block;
+  width: 100vw;
+  height: 869px;
+  background-image: url("./Images/headphones_hero_1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30%;
+}
+.hero-body-info {
+  max-width: 1440px;
+  position: relative;
+  top: -500px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-left: 8%;
+  padding-right: 8%;
+  color: var(--primary-color);
+}
+.hero-body-info .button {
+  margin: 30px auto 60px;
+  padding: 15px 15px;
+  width: 160px;
+  border-radius: 30px;
+  background: var(--button-primary-color);
+  color: var(--primary-color);
+  border: none;
+}
+.hero-body-info .button:hover {
+  opacity: 0.8;
 }
 
-/* Style spécifique pour mobiles */
-@media screen and (max-width: 480px) {
+/* Tablet view Styles
+============================= */
+@media screen and (min-width: 767px) {
+  .header-navbar {
+      top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100vw;
+      padding: 0 9% 0 9%;
+      box-sizing: border-box;
 
+  }
+  .header-navbar-input, .header-navbar-label {
+      display: none;
+  }
+  .header-navbar-logo {
+      flex-basis: 50%;
+      text-align: left;
+  }
+  .header-navbar-logo-imagen {
+      max-width: 161px;
+  }
+  .header-navbar-options {
+      flex-basis: 50%;
+      display: flex;
+      justify-content: space-evenly;
+  }
+  .header-navbar-options .list-item .list-item-link {
+      color: var(--primary-color);
+      text-decoration: none;
+  }
+  .header-navbar-options .list-item .list-item-link:hover {
+      color: #ff6565;
+  }
+
+  .hero-body-info {
+      padding-left: 10%;
+      padding-right: 10%;
+  }
 }
 
-a:hover, a:active {
-  color: #FF6565
-}
+/* Desktop view Styles
+============================= */
+@media screen and (min-width: 1440px) {
+  .header-navbar {
+      max-width: 1440px;
+  }
 
-button:hover, button:active {
-  opacity: 0.9;
-}
-
-.content {
-  max-width: 1000px;
-  margin: 0 auto;
+  .hero-body-info {
+      margin: 0 auto;
+      padding-left: 400px;
+      padding-right: 400px;
+  }
 }
