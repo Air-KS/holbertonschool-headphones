@@ -6,10 +6,6 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  margin: 0;
-}
-
 main {
   display: block;
 }
@@ -183,7 +179,6 @@ template {
 
 /* Variables
   ================================== */
-
 :root {
   --hover-active-links-color: #FF6565;
   --hover-active-button-opacity: 0.9;
@@ -201,7 +196,6 @@ template {
 
 /* Base
   ================================== */
-
 html {
   height: 100%;
   position: relative;
@@ -210,6 +204,7 @@ html {
 }
 
 body {
+  margin: 0;
   height: 100%;
   width: 100%;
   display: flex;
@@ -229,7 +224,8 @@ a:active {
   color: var(--hover-active-links-color);
 }
 
-/*Button*/
+/* Button
+  ================================== */
 .cta-button {
   display: flex;
   background: var(--hover-active-links-color);
@@ -314,7 +310,8 @@ p {
   margin-bottom: 1px;
 }
 
-/* Hamburger menu */
+/* Hamburger menu
+  ================================== */
 #burger-check {
   width: 30px;
   transition: all .2s ease-in-out;
@@ -377,7 +374,8 @@ p {
   transform: rotate(-45deg);
 }
 
-/* Navbar menu */
+/* Navbar menu
+  ================================== */
 .nav-bar {
   color: var(--color-white);
 }
@@ -400,7 +398,8 @@ p {
   display: block;
 }
 
-/* Hero Section */
+/* Hero Section
+  ================================== */
 .hero-section {
   background-image: url('Images/headphones_hero_1.jpg');
   background-position: center top;
@@ -512,7 +511,7 @@ p {
 
 /* Desktop view Styles
 ============================= */
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .whatwedo-icons {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
